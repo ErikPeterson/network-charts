@@ -61,17 +61,18 @@ function PageGraph(data){
                 .classed('activated', true);
         });
 
+    node.append('svg:text')
+    .text(function(d){
+        return d.url;
+    })
+    .attr('dx', 4)
+    .attr('dy', -2);
 
     node.append('circle')
         .attr('r', 4)
         .style('fill', function(d){ return fill[d._site]; });
 
-    node.append('svg:text')
-        .text(function(d){
-            return d.url;
-        })
-        .attr('dx', 4)
-        .attr('dy', -2);
+
 
     function showText(d){
         d3.select(this).classed('activated', function(){
