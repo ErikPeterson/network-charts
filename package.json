@@ -1,0 +1,25 @@
+{
+  "name": "network-chart",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "app.js"
+  },
+  "dependencies": {
+    "express": "~3.3.4",
+    "mongoose": "^3.8.8",
+    "ejs": "^1.0.0"
+  },
+  "devDependencies": {
+    "colors": "^0.6.2",
+    "faker": "^1.0.0",
+    "grunt": "~0.4.1",
+    "grunt-contrib-compass": "^0.8.0",
+    "grunt-contrib-sass": "^0.7.3",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-develop": "~0.2.2",
+    "load-grunt-tasks": "~0.2.0",
+    "request": "~2.27.0",
+    "time-grunt": "~0.1.1"
+  }
+}

@@ -1,0 +1,188 @@
+$heading-text: #999;
+$primary-dark: #B28BA7;
+$primary-mid: #FFD7F3;
+$primary-light: #FFF0FA;
+$bg: white;
+$comp-dark: #83B27C;
+$comp-light: #C9FFC0;
+html{
+	height: 100%;
+}
+body{
+	margin: 0;
+	padding: 0;
+	background-color: $bg;
+	width: auto;
+	height: 100%;
+	font-size: 16px;
+	color: #333333;
+	overflow-x: hidden;
+	font-family: "omnes-pro", Helvetica, Arial, sans-serif;
+
+	h1, h2, h3, h4, h5, h6{
+		font-weight: 100;
+		color: $heading-text;
+	}
+
+	a{
+		color: $comp-dark;
+	}
+
+	.container{
+		display: block;
+		position: relative;
+		top: 0;
+		left: 0;
+		box-sizing: border-box;
+		padding: 1em .5em;
+		height: auto;
+
+		header{
+			width: auto;
+			height: auto;
+			text-align: center;
+			position: relative;
+			padding: 0;
+			h1{
+				margin: 0;
+				padding: 0;
+				line-height: 1;
+				border-bottom: 1px solid $primary-mid;
+				display: inline-block;
+			}
+
+			@media screen and (min-device-width: 321px){
+				width: auto;
+				height: auto;
+				z-index: 1000;
+				text-align: left;
+				h1{	
+					display: inline-block;
+					width: auto;
+				}
+			}
+		}
+		section{
+			width: auto;
+			height: 320px;
+			position: relative;
+			box-sizing: border-box;
+			padding: 1em 0;
+
+			div.chart-container{
+				position: relative;
+				height: 100%;
+				width: 100%;
+				margin: 0;
+				padding: 0;
+
+				svg{
+					height: 100%;
+					width: 100%;
+					display: none;
+				}
+
+				&.sites{
+					svg.sites{
+						display: block;
+						width: 100%;
+						height: 100%;
+					}
+				}
+				&.pages{
+					svg.pages{
+						display: block;
+						width: 100%;
+						height: 100%;
+					}
+				}
+
+			}
+
+			div.chart-menu{
+				width: auto;
+				display: inline-block;
+				height: auto;
+				box-sizing: border-box;
+				padding: .5em 1.5em .75em 1.25em;
+				border: 1px solid $primary-mid;
+				border-radius: .25em;
+				float: right;
+				h3{
+					padding: 0;
+					margin: 0 .25em 0 0;
+					display: inline-block;
+					border-bottom: 1px solid $primary-mid;
+					cursor: default;
+				}
+
+				ul.menu{
+					position: relative;
+					z-index: 999;
+					display: inline-block;
+					height: auto;
+					width: auto;
+					margin: 0;
+					padding: 0;
+					list-style: none;
+					background-color: white;
+					li{
+						display: inline-block;
+						width: auto;
+						height: auto;
+						margin: 0 .5em 0 0;
+						cursor: pointer;
+
+						&:first-child{
+							margin-left: .5em;
+						}
+						&:last-child{
+							margin: 0;
+						}
+						&.active, &:hover{
+							color: $primary-dark;
+						}
+
+						&.active{
+							cursor: default;
+						}
+					}
+				}
+			}
+
+			@media screen and (min-device-width: 720px){
+				height: 720px;
+			}
+		}
+	}
+	footer{
+		position: relative;
+		border-top: 1px solid $primary-mid;
+		bottom: 0;
+		margin-top: 2em;
+		box-sizing: border-box;
+		padding: 1em;
+	}
+}
+
+
+.node{
+  cursor: pointer;
+}
+.node circle{
+  stroke: #fff;
+  stroke-width: 1.5px;
+}
+
+.link {
+  stroke: rgba(0,0,0,0.5);
+  stroke-opacity: .6;
+}
+
+.node text{
+	display: none;
+}
+
+.node.activated text{
+	display: inherit;
+}
