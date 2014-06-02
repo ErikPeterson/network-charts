@@ -21,7 +21,7 @@ function PageGraph(data){
         .attr('height', height)
         .call(zoom);
 
-    
+
 
     var container = svg.append('svg:g');
 
@@ -60,7 +60,6 @@ function PageGraph(data){
         .attr('dy', -2);
 
     function showText(d){
-        d3.event.sourceEvent.stopPropagation();
         d3.select(this).classed('activated', function(){
             if(this.getAttribute('class').match(/activated/)){
                 return false;

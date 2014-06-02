@@ -27,7 +27,7 @@ var config = {
       name: 'network-chart'
     },
     port: 3000,
-    db: 'mongodb://localhost/network-chart-production'
+    db: process.env.MONGOLAB_URI || process.env.MONGOHQ_URL || 'mongodb://localhost/network-chart-production'
   }
 };
 
