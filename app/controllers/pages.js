@@ -2,7 +2,8 @@ var mongoose = require('mongoose'),
   Site = mongoose.model('Site'),
   Page = mongoose.model('Page'),
   PageLink = mongoose.model('PageLink'),
-  async = require('async');
+  async = require('async'),
+  randomcolor = require('randomcolor');
 
 exports.all = function(req, res){
   var data = {};
@@ -20,6 +21,8 @@ exports.all = function(req, res){
                 res.status(500);
                 return res.end(JSON.stringify({err: err}));
             }
+
+            data.colors = randomcolor({luminosity: 'bright', count: urlarray.length, format: 'hex'});
 
             Page.find().lean().exec(function(err, pages){
                 if(err){

@@ -128,40 +128,51 @@
                 return;
             } else{
                 console.log("Successfully saved sites : )".green);
-            }
-        });
+                Page.create( pagesarr, function(err){
+                    if(err){
+                        console.log(err.toString().red);
+                        return;
+                    } else{
+                        console.log("Successfully saved pages : )".green);
+                    }
 
-        Page.create( pagesarr, function(err){
-            if(err){
-                console.log(err.toString().red);
-                return;
-            } else{
-                console.log("Successfully saved pages : )".green);
-            }
-        });
+                    PageLink.create( pageLinkArr, function(err){
+                        if(err){
+                            console.log(err.toString().red);
+                            return;
+                        } else{
+                            console.log("Successfully saved page links : )".green);
+                        }
 
-        PageLink.create( pageLinkArr, function(err){
-            if(err){
-                console.log(err.toString().red);
-                return;
-            } else{
-                console.log("Successfully saved page links : )".green);
-            }
-        });
+                        SiteLink.create( siteLinkArr, function(err){
+                                if(err){
+                                    console.log(err.toString().red);
+                                    return;
+                                } else{
+                                    console.log("Successfully saved site links : )".green);
 
-        SiteLink.create( siteLinkArr, function(err){
-            if(err){
-                console.log(err.toString().red);
-                return;
-            } else{
-                console.log("Successfully saved site links : )".green);
+                                    db.close()
+                                    return cb();
+                                }
+                            });
+                            
+                            
+                        });
 
-                db.close()
+                    });
+
+
+                }});
+
+     
             }
-        });
         
-        return cb();
-    }
+
+        
+
+
+
+        
 
    
     seed(150, function(){

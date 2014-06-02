@@ -175,8 +175,20 @@ body{
 }
 
 .link {
-  stroke: rgba(0,0,0,0.5);
-  stroke-opacity: .6;
+  	stroke: black;
+  	stroke-opacity: .5;
+  	stroke-width: 1px;
+}
+
+svg.pages .link {
+  display: none;
+}
+
+svg.pages .link.activated{
+	display: inherit;
+	stroke: black;
+  	stroke-opacity: .5;
+  	stroke-width: 1px;
 }
 
 .node text{
